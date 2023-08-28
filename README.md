@@ -1,7 +1,6 @@
 # ArcLayout
 
-[![Release](https://jitpack.io/v/danilo-favoratti/Repo.svg)]
-(https://jitpack.io/#danilo-favoratti/ArcLayout)
+[![Release](https://jitpack.io/v/danilo-favoratti/ArcLayout.svg)](https://jitpack.io/#danilo-favoratti/ArcLayout)
 
 Composable ArcLayout library for Android.
 
@@ -11,12 +10,14 @@ Composable ArcLayout library for Android.
 
 API Level 28+ compiled with SDK 34. 
 
+**Please, use compileSdk = 34 or higher.**
+
 # Usage
 Add the repository and dependency to the gradle configuration.
 
 ## Gradle Config (Groovy)
 
-### Adding the repository to build.gradle
+### Adding the repository to build.gradle (root)
 ```
 allprojects {
     repositories {
@@ -26,7 +27,18 @@ allprojects {
 }
 ```
 
-### Adding the repository to settings.gradle.kts
+### Adding the dependency to build.gradle (app module)
+
+```
+dependencies {
+    ...
+    implementation 'com.github.danilo-favoratti:ArcLayout:0.1.0'
+}
+```
+
+## Gradle Config (Kotlin/KTS)
+
+### Adding the repository to settings.gradle.kts (root)
 
 ```
 dependencyResolutionManagement {
@@ -37,17 +49,7 @@ dependencyResolutionManagement {
 }
 ```
 
-## Gradle Config (Kotlin/KTS)
-
-### Adding the dependency build.gradle
-
-```
-dependencies {
-    implementation 'com.github.danilo-favoratti:ArcLayout:0.1.0'
-}
-```
-
-### Adding the dependency build.gradle.kts
+### Adding the dependency build.gradle.kts (app module)
 
 ```
 dependencies {
@@ -65,7 +67,11 @@ ArcLayout(
     alignment = Alignment.TOP,
     radius = 100.dp
 ) {
-    // ... your items
+    // ... your items, example:
+    Text(text = "A")
+    Text(text = "B")
+    Text(text = "C")
+    Text(text = "D")
 }
 ```
 
@@ -87,7 +93,11 @@ CustomArcLayout(
     radius = 100.dp,
     reverse = false
 ) {
-    // ... your items
+    // ... your items, example:
+    Text(text = "A")
+    Text(text = "B")
+    Text(text = "C")
+    Text(text = "D")
 }
 ```
 
