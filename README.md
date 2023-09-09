@@ -4,6 +4,11 @@
 
 Composable ArcLayout library for Android.
 
+## Demo Application 
+
+[![Demo App][arclayout-demo-app_png]](https://play.google.com/store/apps/details?id=com.favoratti.arclayout)
+[https://play.google.com/store/apps/details?id=com.favoratti.arclayout](https://play.google.com/store/apps/details?id=com.favoratti.arclayout)
+
 ![ArcLayout Demo][arclayout_png]
 
 ## API Level
@@ -86,12 +91,14 @@ ArcLayout(
 You can create it with custom parameters.
 
 ```
-CustomArcLayout(
+ CustomArcLayout(
     modifier = Modifier.background(color = Color.Black),
-    anchorAngle = 235f,
-    sweepAngle = 130f,
-    radius = 100.dp,
-    reverse = false
+    parameters = 
+        Parameters.builder(radius = 100.dp)
+            .anchorAngle(235f)
+            .sweepAngle(130f)
+            .reverse(false)
+            .build()
 ) {
     // ... your items, example:
     Text(text = "A")
@@ -130,3 +137,4 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ```
 [arclayout_png]: https://raw.githubusercontent.com/danilo-favoratti/ArcLayout/main/art/arclayout.png
+[arclayout-demo-app_png]: https://raw.githubusercontent.com/danilo-favoratti/ArcLayout/main/art/arclayout-demo-app.png
